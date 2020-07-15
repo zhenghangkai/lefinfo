@@ -38,7 +38,7 @@ def lefinfo_readlines(linelist):
     leflist = []
     for line in linelist:
         if 'VERSION' in line:
-                version = lefinfo_linesplit(line,'VERSION')
+            version = lefinfo_linesplit(line,'VERSION')
         if 'MACRO' in line:
             macrolist = []
             macro = line[line.find('MACRO')+5:]
@@ -74,7 +74,7 @@ def lefinfo_openlef(filename):
     """
     :param filename: The path of LEF file to be opened
     """
-    with open(filename, "rb") as f:
+    with open(filename, "r") as f:
         linelist = f.readlines()
     lef = lefinfo_readlines(linelist)
     return lef
